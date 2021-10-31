@@ -1,9 +1,6 @@
 ﻿using Database.Enum;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Database.Model
 {
@@ -17,5 +14,6 @@ namespace Database.Model
         public int iNamXuatBan { get; set; }
         public DateTime dNgayNhap { get; set; }
         public TinhTrang sTinhTrang { get; set; }
+        public IList<TheMuon> TheMuons { get; set; }
     }
 }

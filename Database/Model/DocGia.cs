@@ -1,5 +1,6 @@
 ﻿using Database.Enum;
 using System;
+using System.Collections.Generic;
 
 namespace Database.Model
 {
@@ -15,6 +16,7 @@ namespace Database.Model
         public DateTime sNgayHetHan { get; set; }
         public string sUser { get; set; }
         public string sPassword { get; set; }
+        public IList<TheMuon> TheMuons { get; set; }
 
     }
 }
