@@ -16,6 +16,7 @@ namespace Database.Model
         public DateTime sNgayHetHan { get; set; }
         public string sUser { get; set; }
         public string sPassword { get; set; }
+        public IList<YeuCauSach> YeuCauSachs { get; set; }
         public IList<TheMuon> TheMuons { get; set; }
 
     }

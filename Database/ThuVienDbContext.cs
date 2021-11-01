@@ -17,15 +17,33 @@ namespace Database
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //Doc gia
             modelBuilder.Entity<DocGia>()
                 .HasKey(c => c.sMaDocGia);
-
+           
+            //Sach
             modelBuilder.Entity<Sach>()
                 .HasKey(c => c.sMaSach);
 
+            //Thu Thu
             modelBuilder.Entity<ThuThu>()
                 .HasKey(c => c.sMaNhanVien);
 
+            // Yeu Cau Sach
+            modelBuilder.Entity<YeuCauSach>()
+                .HasKey(c => c.sMaYeuCau);
+
+            modelBuilder.Entity<YeuCauSach>()
+                        .HasOne(sc => sc.sDocGia)
+                        .WithMany(s => s.YeuCauSachs)
+                        .HasForeignKey(sc => sc.sMaDocGia);
+
+            modelBuilder.Entity<YeuCauSach>()
+                        .HasOne(sc => sc.sSach)
+                        .WithMany(s => s.YeuCauSachs)
+                        .HasForeignKey(sc => sc.sMaSach);
+
+            //The Muon
             modelBuilder.Entity<TheMuon>()
                 .HasKey(c => c.sMaThe);
 

@@ -14,6 +14,7 @@ namespace Database.Model
         public int iNamXuatBan { get; set; }
         public DateTime dNgayNhap { get; set; }
         public TinhTrang sTinhTrang { get; set; }
+        public IList<YeuCauSach> YeuCauSachs { get; set; }
         public IList<TheMuon> TheMuons { get; set; }
     }
 }
