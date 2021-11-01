@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThuVien", "ThuVien\ThuVien.csproj", "{DAB5694D-58B7-48AB-B87D-860ACD49A3F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "Database\Database.csproj", "{28629AC8-EBB4-4C9F-936C-D106288E3A41}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Database", "Database\Database.csproj", "{28629AC8-EBB4-4C9F-936C-D106288E3A41}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayGround", "PlayGround\PlayGround.csproj", "{7E3EDF0A-14CA-4CB6-AECD-041A617054C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KhoiDongData", "PlayGround\KhoiDongData.csproj", "{7E3EDF0A-14CA-4CB6-AECD-041A617054C0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

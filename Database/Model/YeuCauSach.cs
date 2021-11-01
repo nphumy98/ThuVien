@@ -13,6 +13,5 @@ namespace Database.Model
         public DateTime dNgayMuon { get; set; }
         public DateTime dNgayTra { get; set; }
         public TrangThai sTrangThai { get; set; }
-        public double fGiaThue { get; set; }
     }
 }

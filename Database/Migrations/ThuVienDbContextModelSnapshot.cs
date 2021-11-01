@@ -169,6 +169,37 @@ namespace Database.Migrations
                     b.ToTable("ThuThus");
                 });
 
+            modelBuilder.Entity("Database.Model.YeuCauSach", b =>
+                {
+                    b.Property<int>("sMaYeuCau")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("dNgayMuon")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("dNgayTra")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("sMaDocGia")
+                        .HasColumnType("int");
+
+                    b.Property<int>("sMaSach")
+                        .HasColumnType("int");
+
+                    b.Property<int>("sTrangThai")
+                        .HasColumnType("int");
+
+                    b.HasKey("sMaYeuCau");
+
+                    b.HasIndex("sMaDocGia");
+
+                    b.HasIndex("sMaSach");
+
+                    b.ToTable("YeuCauSachs");
+                });
+
             modelBuilder.Entity("Database.Model.TheMuon", b =>
                 {
                     b.HasOne("Database.Model.DocGia", "sDocGia")
@@ -196,14 +227,37 @@ namespace Database.Migrations
                     b.Navigation("sSach");
                 });
 
+            modelBuilder.Entity("Database.Model.YeuCauSach", b =>
+                {
+                    b.HasOne("Database.Model.DocGia", "sDocGia")
+                        .WithMany("YeuCauSachs")
+                        .HasForeignKey("sMaDocGia")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Database.Model.Sach", "sSach")
+                        .WithMany("YeuCauSachs")
+                        .HasForeignKey("sMaSach")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("sDocGia");
+
+                    b.Navigation("sSach");
+                });
+
             modelBuilder.Entity("Database.Model.DocGia", b =>
                 {
                     b.Navigation("TheMuons");
+
+                    b.Navigation("YeuCauSachs");
                 });
 
             modelBuilder.Entity("Database.Model.Sach", b =>
                 {
                     b.Navigation("TheMuons");
+
+                    b.Navigation("YeuCauSachs");
                 });
 
             modelBuilder.Entity("Database.Model.ThuThu", b =>

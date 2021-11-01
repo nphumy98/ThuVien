@@ -8,6 +8,7 @@ namespace Database
         public DbSet<DocGia> DocGias { get; set; }
         public DbSet<Sach> Sachs { get; set; }
         public DbSet<TheMuon> TheMuons { get; set; }
+        public DbSet<YeuCauSach> YeuCauSachs { get; set; }
         public DbSet<ThuThu> ThuThus { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

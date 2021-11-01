@@ -60,12 +60,42 @@ namespace Database.Migrations
                     sDiaChi = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     sSDT = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     dNgayVaoLam = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    cChucVu = table.Column<int>(type: "int", nullable: false),
                     sUser = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     sPassword = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ThuThus", x => x.sMaNhanVien);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "YeuCauSachs",
+                columns: table => new
+                {
+                    sMaYeuCau = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    sMaDocGia = table.Column<int>(type: "int", nullable: false),
+                    sMaSach = table.Column<int>(type: "int", nullable: false),
+                    dNgayMuon = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    dNgayTra = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    sTrangThai = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_YeuCauSachs", x => x.sMaYeuCau);
+                    table.ForeignKey(
+                        name: "FK_YeuCauSachs_DocGias_sMaDocGia",
+                        column: x => x.sMaDocGia,
+                        principalTable: "DocGias",
+                        principalColumn: "sMaDocGia",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_YeuCauSachs_Sachs_sMaSach",
+                        column: x => x.sMaSach,
+                        principalTable: "Sachs",
+                        principalColumn: "sMaSach",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -118,6 +148,16 @@ namespace Database.Migrations
                 name: "IX_TheMuons_sMaSach",
                 table: "TheMuons",
                 column: "sMaSach");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_YeuCauSachs_sMaDocGia",
+                table: "YeuCauSachs",
+                column: "sMaDocGia");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_YeuCauSachs_sMaSach",
+                table: "YeuCauSachs",
+                column: "sMaSach");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -126,13 +166,16 @@ namespace Database.Migrations
                 name: "TheMuons");
 
             migrationBuilder.DropTable(
+                name: "YeuCauSachs");
+
+            migrationBuilder.DropTable(
+                name: "ThuThus");
+
+            migrationBuilder.DropTable(
                 name: "DocGias");
 
             migrationBuilder.DropTable(
                 name: "Sachs");
-
-            migrationBuilder.DropTable(
-                name: "ThuThus");
         }
     }
 }

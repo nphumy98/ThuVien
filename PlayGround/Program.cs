@@ -4,7 +4,7 @@ using Database.Model;
 using System;
 using System.Collections.Generic;
 
-namespace PlayGround
+namespace KhoiDongData
 {
     class Program
     {
@@ -109,21 +109,20 @@ namespace PlayGround
                 sPassword = "password",
             };
 
-            using ThuVienDbContext myContext = new ThuVienDbContext();
-            myContext.DocGias.AddRange( new List<DocGia>()
+
+            // Doc gia ==============================================================================
+            var docgia1 = new DocGia()
             {
-                new DocGia()
-                {
-                    sTenDocGia = "Doc Gia A",
-                    sGioiTinh = GioiTinh.Nam,
-                    sQueQuan = "Thai Binh",
-                    sDiaChi = "14 Ngo 28",
-                    sNgaySinh = new DateTime(1990, 6, 10),
-                    dNgayLapThe = new DateTime(2020, 6, 10),
-                    sNgayHetHan = new DateTime(2025, 6, 10),
-                    sUser = "Doc Gia A",
-                    sPassword = "password",
-                    TheMuons = new List<TheMuon>()
+                sTenDocGia = "Doc Gia A",
+                sGioiTinh = GioiTinh.Nam,
+                sQueQuan = "Thai Binh",
+                sDiaChi = "14 Ngo 28",
+                sNgaySinh = new DateTime(1990, 6, 10),
+                dNgayLapThe = new DateTime(2020, 6, 10),
+                sNgayHetHan = new DateTime(2025, 6, 10),
+                sUser = "Doc Gia A",
+                sPassword = "password",
+                TheMuons = new List<TheMuon>()
                     {
                         new TheMuon()
                         {
@@ -144,19 +143,20 @@ namespace PlayGround
 
                         }
                     }
-                },
-                new DocGia()
-                {
-                    sTenDocGia = "Doc Gia B",
-                    sGioiTinh = GioiTinh.Nu,
-                    sQueQuan = "Nam Dinh",
-                    sDiaChi = "32 Cho Sat",
-                    sNgaySinh = new DateTime(1986, 1, 2),
-                    dNgayLapThe = new DateTime(2017, 4, 12),
-                    sNgayHetHan = new DateTime(2025, 5, 11),
-                    sUser = "Doc Gia B",
-                    sPassword = "password",
-                    TheMuons = new List<TheMuon>()
+            };
+
+            var docgia2 = new DocGia()
+            {
+                sTenDocGia = "Doc Gia B",
+                sGioiTinh = GioiTinh.Nu,
+                sQueQuan = "Nam Dinh",
+                sDiaChi = "32 Cho Sat",
+                sNgaySinh = new DateTime(1986, 1, 2),
+                dNgayLapThe = new DateTime(2017, 4, 12),
+                sNgayHetHan = new DateTime(2025, 5, 11),
+                sUser = "Doc Gia B",
+                sPassword = "password",
+                TheMuons = new List<TheMuon>()
                     {
                         new TheMuon()
                         {
@@ -168,19 +168,20 @@ namespace PlayGround
 
                         }
                     }
-                },
-                new DocGia()
-                {
-                    sTenDocGia = "Doc Gia C",
-                    sGioiTinh = GioiTinh.Nu,
-                    sQueQuan = "Dien Bien",
-                    sDiaChi = "32 Phan Chau Trinh",
-                    sNgaySinh = new DateTime(1987, 6, 10),
-                    dNgayLapThe = new DateTime(2012, 3, 23),
-                    sNgayHetHan = new DateTime(2022, 6, 12),
-                    sUser = "Doc Gia B",
-                    sPassword = "password",
-                    TheMuons = new List<TheMuon>()
+            };
+
+            var docgia3 = new DocGia()
+            {
+                sTenDocGia = "Doc Gia C",
+                sGioiTinh = GioiTinh.Nu,
+                sQueQuan = "Dien Bien",
+                sDiaChi = "32 Phan Chau Trinh",
+                sNgaySinh = new DateTime(1987, 6, 10),
+                dNgayLapThe = new DateTime(2012, 3, 23),
+                sNgayHetHan = new DateTime(2022, 6, 12),
+                sUser = "Doc Gia B",
+                sPassword = "password",
+                TheMuons = new List<TheMuon>()
                     {
                         new TheMuon()
                         {
@@ -192,10 +193,76 @@ namespace PlayGround
 
                         }
                     }
-                }
-            }
-            );
+            };
 
+
+            // Yeu cau sach ==========================================
+            var yeuCauSach1 = new YeuCauSach()
+            {
+                sDocGia = docgia1,
+                sSach = sach5,
+                dNgayMuon = new DateTime(2021, 12, 1),
+                dNgayTra = new DateTime(2021, 12, 28),
+                sTrangThai = TrangThai.ChoQuyetDinh
+            };
+
+            var yeuCauSach2 = new YeuCauSach()
+            {
+                sDocGia = docgia1,
+                sSach = sach6,
+                dNgayMuon = new DateTime(2021, 12, 13),
+                dNgayTra = new DateTime(2021, 12, 25),
+                sTrangThai = TrangThai.ChoQuyetDinh
+            };
+
+            var yeuCauSach3 = new YeuCauSach()
+            {
+                sDocGia = docgia2,
+                sSach = sach1,
+                dNgayMuon = new DateTime(2021, 11, 3),
+                dNgayTra = new DateTime(2021, 12, 1),
+                sTrangThai = TrangThai.ChoQuyetDinh
+            };
+
+            var yeuCauSach4 = new YeuCauSach()
+            {
+                sDocGia = docgia2,
+                sSach = sach6,
+                dNgayMuon = new DateTime(2021, 11, 23),
+                dNgayTra = new DateTime(2021, 12, 15),
+                sTrangThai = TrangThai.ChoQuyetDinh
+            };
+
+            var yeuCauSach5 = new YeuCauSach()
+            {
+                sDocGia = docgia3,
+                sSach = sach2,
+                dNgayMuon = new DateTime(2021, 11, 4),
+                dNgayTra = new DateTime(2021, 11, 20),
+                sTrangThai = TrangThai.ChoQuyetDinh
+            };
+
+            var yeuCauSach6 = new YeuCauSach()
+            {
+                sDocGia = docgia3,
+                sSach = sach5,
+                dNgayMuon = new DateTime(2021, 11, 11),
+                dNgayTra = new DateTime(2021, 12, 6),
+                sTrangThai = TrangThai.ChoQuyetDinh
+            };
+
+            var yeuCauSach7 = new YeuCauSach()
+            {
+                sDocGia = docgia3,
+                sSach = sach6,
+                dNgayMuon = new DateTime(2021, 11, 7),
+                dNgayTra = new DateTime(2021, 12, 4),
+                sTrangThai = TrangThai.ChoQuyetDinh
+            };
+
+            using ThuVienDbContext myContext = new ThuVienDbContext();
+            myContext.DocGias.AddRange(new List<DocGia> { docgia1, docgia2, docgia3});
+            myContext.YeuCauSachs.AddRange(new List<YeuCauSach> { yeuCauSach1, yeuCauSach2, yeuCauSach3, yeuCauSach4, yeuCauSach5, yeuCauSach6, yeuCauSach7 });
             myContext.Sachs.AddRange(new List<Sach> { sach5, sach6 });
             myContext.SaveChanges();
         }
