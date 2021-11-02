@@ -48,8 +48,8 @@ namespace ThuVien.Pages.DocGia
             }
 
             Hide();
-            var dangNhap = new DangNhap();
-            dangNhap.Show();
+            var dangKyDocGia = new DangKyDocGia();
+            dangKyDocGia.Show();
         }
 
 
