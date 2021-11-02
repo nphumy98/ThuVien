@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThuVien", "ThuVien\ThuVien.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Database", "Database\Database.csproj", "{28629AC8-EBB4-4C9F-936C-D106288E3A41}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KhoiDongData", "PlayGround\KhoiDongData.csproj", "{7E3EDF0A-14CA-4CB6-AECD-041A617054C0}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{28629AC8-EBB4-4C9F-936C-D106288E3A41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28629AC8-EBB4-4C9F-936C-D106288E3A41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28629AC8-EBB4-4C9F-936C-D106288E3A41}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7E3EDF0A-14CA-4CB6-AECD-041A617054C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7E3EDF0A-14CA-4CB6-AECD-041A617054C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7E3EDF0A-14CA-4CB6-AECD-041A617054C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7E3EDF0A-14CA-4CB6-AECD-041A617054C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

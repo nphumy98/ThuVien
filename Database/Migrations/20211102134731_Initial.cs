@@ -79,7 +79,8 @@ namespace Database.Migrations
                     sMaSach = table.Column<int>(type: "int", nullable: false),
                     dNgayMuon = table.Column<DateTime>(type: "datetime2", nullable: false),
                     dNgayTra = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    sTrangThai = table.Column<int>(type: "int", nullable: false)
+                    sTrangThai = table.Column<int>(type: "int", nullable: false),
+                    fGiaThue = table.Column<double>(type: "float", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -1,4 +1,6 @@
 ﻿
+using Database.Model;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
@@ -71,11 +73,14 @@ namespace ThuVien.Pages.DocGia
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
+
+            SetUp();
+
         }
 
         private void SetUp()
         {
-            var sachTrongKho = CongCu.myContext.Sachs.Where(x => x.sTinhTrang == Database.Enum.TinhTrang.TrongKho).ToList();
+            sachTrongKho = CongCu.myContext.Sachs.Where(x => x.sTinhTrang == Database.Enum.TinhTrang.TrongKho).ToList();
             DataTable dtb = CongCu.ToDataTable(sachTrongKho);
             dtb.Columns.RemoveAt(9);
             dtb.Columns.RemoveAt(8);
@@ -94,5 +99,6 @@ namespace ThuVien.Pages.DocGia
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private DataGridViewButtonColumn buttons;
+        private List<Sach> sachTrongKho;
     }
 }

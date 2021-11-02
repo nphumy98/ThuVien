@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Database.Migrations
 {
     [DbContext(typeof(ThuVienDbContext))]
-    [Migration("20211101075905_Initial")]
+    [Migration("20211102134731_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -183,6 +183,9 @@ namespace Database.Migrations
 
                     b.Property<DateTime>("dNgayTra")
                         .HasColumnType("datetime2");
+
+                    b.Property<double>("fGiaThue")
+                        .HasColumnType("float");
 
                     b.Property<int>("sMaDocGia")
                         .HasColumnType("int");

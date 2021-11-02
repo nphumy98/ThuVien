@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ThuVien.Helpers;
 
 namespace ThuVien
 {
@@ -14,6 +15,7 @@ namespace ThuVien
         [STAThread]
         static void Main()
         {
+            CongCu.SeedData();
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

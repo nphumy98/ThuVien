@@ -36,7 +36,14 @@ namespace ThuVien.Pages.DocGia
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "Dat Sach")
+            {
+                int row = this.dataGridView1.CurrentCell.RowIndex;
+                CongCu.CurrentSach = sachTrongKho[row];
+                var tinhTien = new TinhTien();
+                Hide();
+                tinhTien.Show();
+            }
         }
     }
 }

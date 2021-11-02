@@ -182,6 +182,9 @@ namespace Database.Migrations
                     b.Property<DateTime>("dNgayTra")
                         .HasColumnType("datetime2");
 
+                    b.Property<double>("fGiaThue")
+                        .HasColumnType("float");
+
                     b.Property<int>("sMaDocGia")
                         .HasColumnType("int");
 
