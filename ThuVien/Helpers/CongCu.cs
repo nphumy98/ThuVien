@@ -18,6 +18,8 @@ namespace ThuVien.Helpers
         public static ThuThu CurrentNhanVien;
         public static ThuThu CurrentAdmin;
         public static Sach CurrentSach;
+        public static YeuCauSach CurrentYeuCauSach;
+        public static TheMuon CurrentTheMuon;
 
         public static DataTable ToDataTable<T>(List<T> items)
         {
