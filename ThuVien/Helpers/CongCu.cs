@@ -16,6 +16,7 @@ namespace ThuVien.Helpers
         public static ThuVienDbContext myContext = new ThuVienDbContext();
         public static DocGia CurrentDocGia;
         public static ThuThu CurrentNhanVien;
+        public static ThuThu CurrentAdmin;
         public static Sach CurrentSach;
 
         public static DataTable ToDataTable<T>(List<T> items)

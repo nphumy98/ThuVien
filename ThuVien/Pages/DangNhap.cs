@@ -70,7 +70,11 @@ namespace ThuVien
                 if (dangNhapChinhXac)
                 {
                     CongCu.CurrentNhanVien = nhanviensList[0];
-                    var trangNhanVien = new NhanVienMenu();
+                    if (CongCu.LoaiUser == UserType.Admin)
+                    {
+                        CongCu.CurrentAdmin = nhanviensList[0];
+                    }
+                        var trangNhanVien = new NhanVienMenu();
                     Hide();
                     trangNhanVien.Show();
                 }
