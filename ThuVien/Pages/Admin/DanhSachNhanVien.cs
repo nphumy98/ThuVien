@@ -34,5 +34,12 @@ namespace ThuVien.Pages.Admin
                 thongTinNhanVien.Show();
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var dangKyNhanVien = new DangKyNhanVien();
+            Hide();
+            dangKyNhanVien.Show();
+        }
     }
 }
