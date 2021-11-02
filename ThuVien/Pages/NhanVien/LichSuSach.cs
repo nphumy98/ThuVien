@@ -21,5 +21,20 @@ namespace ThuVien.Pages.NhanVien
             var danhMucSach = new DanhMucSach();
             danhMucSach.Show();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
