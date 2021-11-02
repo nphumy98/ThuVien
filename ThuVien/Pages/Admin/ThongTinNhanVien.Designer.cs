@@ -127,8 +127,6 @@ namespace ThuVien.Pages.Admin
             this.ResumeLayout(false);
             this.PerformLayout();
 
-            SetUpThongTin();
-
         }
 
         #endregion

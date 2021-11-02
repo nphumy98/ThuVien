@@ -15,6 +15,7 @@ namespace ThuVien.Pages
         public NhanVienMenu()
         {
             InitializeComponent();
+            SetUp();
         }
 
         private void button2_Click(object sender, EventArgs e)

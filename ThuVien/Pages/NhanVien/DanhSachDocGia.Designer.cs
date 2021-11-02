@@ -72,8 +72,6 @@ namespace ThuVien.Pages.NhanVien
             this.Text = "DanhSachDocGia";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-
-            SetUp();
         }
 
         #endregion

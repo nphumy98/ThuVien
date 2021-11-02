@@ -144,8 +144,6 @@ namespace ThuVien.Pages
             this.Text = "ThongTinCaNhan";
             this.ResumeLayout(false);
             this.PerformLayout();
-
-            SetUpThongTin();
         }
 
         private void SetUpThongTin()

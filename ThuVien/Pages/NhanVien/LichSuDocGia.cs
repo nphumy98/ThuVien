@@ -13,6 +13,7 @@ namespace ThuVien.Pages.NhanVien
         public LichSuDocGia()
         {
             InitializeComponent();
+            SetUp();
         }
 
         private void button2_Click(object sender, EventArgs e)

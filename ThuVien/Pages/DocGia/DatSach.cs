@@ -16,7 +16,9 @@ namespace ThuVien.Pages.DocGia
         public DatSach()
         {
             InitializeComponent();
-           
+
+            SetUp();
+
         }
 
         private void button1_Click(object sender, EventArgs e)

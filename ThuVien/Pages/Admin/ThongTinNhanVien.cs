@@ -15,6 +15,7 @@ namespace ThuVien.Pages.Admin
         public ThongTinNhanVien()
         {
             InitializeComponent();
+            SetUpThongTin();
         }
 
         private void button1_Click(object sender, EventArgs e)

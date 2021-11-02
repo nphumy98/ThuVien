@@ -15,6 +15,7 @@ namespace ThuVien.Pages.NhanVien
         public XetDuyetYeuCauSach()
         {
             InitializeComponent();
+            SetUp();
         }
 
         private void button1_Click(object sender, EventArgs e)

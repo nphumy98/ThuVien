@@ -95,8 +95,6 @@ namespace ThuVien.Pages.NhanVien
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
-            SetUp();
         }
 
         #endregion

@@ -14,6 +14,7 @@ namespace ThuVien.Pages.NhanVien
         public DanhSachDocGia()
         {
             InitializeComponent();
+            SetUp();
         }
 
         private void button1_Click(object sender, EventArgs e)

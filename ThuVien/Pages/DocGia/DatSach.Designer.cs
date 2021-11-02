@@ -73,9 +73,6 @@ namespace ThuVien.Pages.DocGia
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
-
-            SetUp();
-
         }
 
         private void SetUp()
