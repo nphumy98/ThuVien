@@ -1,4 +1,6 @@
 ﻿
+using ThuVien.Helpers;
+
 namespace ThuVien.Pages.DocGia
 {
     partial class TinhTien
@@ -166,6 +168,8 @@ namespace ThuVien.Pages.DocGia
             this.ResumeLayout(false);
             this.PerformLayout();
 
+            SetUp();
+
         }
 
 
@@ -173,6 +177,7 @@ namespace ThuVien.Pages.DocGia
         {
             label8.Hide();
             button2.Hide();
+            label2.Text = CongCu.CurrentSach.sTenSach;
         }
         #endregion
 
