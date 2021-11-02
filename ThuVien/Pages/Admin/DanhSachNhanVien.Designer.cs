@@ -85,6 +85,8 @@ namespace ThuVien.Pages.Admin
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
+            SetUp();
+
         }
 
         #endregion

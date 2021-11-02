@@ -10,6 +10,7 @@ using ThuVien.Helpers;
 using System.Text;
 using System.Windows.Forms;
 using ThuVien.Pages;
+using ThuVien.Pages.DocGia;
 
 namespace ThuVien
 {
@@ -108,7 +109,9 @@ namespace ThuVien
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            var dangKyDocGia = new DangKyDocGia();
+            Hide();
+            dangKyDocGia.Show();
         }
     }
 }
