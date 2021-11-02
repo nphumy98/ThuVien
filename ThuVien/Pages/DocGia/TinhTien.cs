@@ -55,26 +55,7 @@ namespace ThuVien.Pages.DocGia
 
         private void label6_Click(object sender, EventArgs e)
         {
-            var tien = TienMuonSach(dateTimePicker1.Value, dateTimePicker2.Value);
-            if (tien <=0)
-            {
-                MessageBox.Show("Ngay Muon phai co gia tri hon thoi diem hien tai va it hon Ngay Tra");
-            }
-            else
-            {
-                label8.Show();
-                button2.Show();
-                label8.Text = tien.ToString();
-                CongCu.myContext.YeuCauSachs.Add(new Database.Model.YeuCauSach()
-                {
-                    sMaDocGia = CongCu.CurrentDocGia.sMaDocGia,
-                    sMaSach = CongCu.CurrentSach.sMaSach,
-                    dNgayMuon = dateTimePicker1.Value,
-                    dNgayTra = dateTimePicker2.Value,
-                    sTrangThai = Database.Enum.TrangThai.ChoQuyetDinh,
-                    fGiaThue = tien
-                });
-            }
+            
         }
 
         private void label8_Click(object sender, EventArgs e)
@@ -109,6 +90,30 @@ namespace ThuVien.Pages.DocGia
             var datSach = new DatSach();
             Hide();
             datSach.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var tien = TienMuonSach(dateTimePicker1.Value, dateTimePicker2.Value);
+            if (tien <= 0)
+            {
+                MessageBox.Show("Ngay Muon phai co gia tri hon thoi diem hien tai va it hon Ngay Tra");
+            }
+            else
+            {
+                label8.Show();
+                button2.Show();
+                label8.Text = tien.ToString();
+                CongCu.myContext.YeuCauSachs.Add(new Database.Model.YeuCauSach()
+                {
+                    sMaDocGia = CongCu.CurrentDocGia.sMaDocGia,
+                    sMaSach = CongCu.CurrentSach.sMaSach,
+                    dNgayMuon = dateTimePicker1.Value,
+                    dNgayTra = dateTimePicker2.Value,
+                    sTrangThai = Database.Enum.TrangThai.ChoQuyetDinh,
+                    fGiaThue = tien
+                });
+            }
         }
     }
 }
