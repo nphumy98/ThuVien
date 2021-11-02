@@ -113,6 +113,8 @@ namespace ThuVien.Pages.DocGia
                     sTrangThai = Database.Enum.TrangThai.ChoQuyetDinh,
                     fGiaThue = tien
                 });
+
+                CongCu.myContext.SaveChanges();
             }
         }
     }
