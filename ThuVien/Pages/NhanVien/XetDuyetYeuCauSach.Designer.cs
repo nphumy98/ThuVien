@@ -79,7 +79,7 @@ namespace ThuVien.Pages.NhanVien
         #endregion
         private void SetUp()
         {
-            yeuCauSach = CongCu.myContext.YeuCauSachs.ToList();
+            yeuCauSach = CongCu.myContext.YeuCauSachs.Where(x => x.sTrangThai == Database.Enum.TrangThai.ChoQuyetDinh).ToList();
             DataTable dtb = CongCu.ToDataTable(yeuCauSach);
             //dtb.Columns.RemoveAt(9);
             //dtb.Columns.RemoveAt(8);
