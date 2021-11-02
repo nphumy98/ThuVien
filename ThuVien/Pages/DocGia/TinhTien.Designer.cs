@@ -166,6 +166,7 @@ namespace ThuVien.Pages.DocGia
             this.ResumeLayout(false);
             this.PerformLayout();
 
+            SetUp();
         }
 
 
