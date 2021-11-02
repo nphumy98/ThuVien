@@ -1,7 +1,9 @@
 ﻿
 using Database.Model;
+using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using ThuVien.Helpers;
@@ -74,6 +76,7 @@ namespace ThuVien.Pages.DocGia
             this.dataGridView2.RowTemplate.Height = 25;
             this.dataGridView2.Size = new System.Drawing.Size(341, 214);
             this.dataGridView2.TabIndex = 2;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // label1
             // 
@@ -123,7 +126,6 @@ namespace ThuVien.Pages.DocGia
             this.PerformLayout();
 
             SetUp();
-
         }
 
         private void SetUp()
@@ -142,6 +144,15 @@ namespace ThuVien.Pages.DocGia
             dtb2.Columns.RemoveAt(2);
             dtb2.Columns.RemoveAt(5);
             dataGridView2.DataSource = dtb2;
+
+            for (int i = 0; i< dataGridView2.Rows.Count; i++ )
+            {
+                if (DateTime.Compare(DateTime.Now, sachDangHoacDaMuon[i].dNgayTra) >0)
+                {
+                    dataGridView2.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                }
+            }
+
         }
 
         #endregion

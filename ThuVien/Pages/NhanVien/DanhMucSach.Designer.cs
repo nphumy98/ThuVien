@@ -1,7 +1,9 @@
 ﻿
 using Database.Model;
+using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using ThuVien.Helpers;
@@ -92,6 +94,18 @@ namespace ThuVien.Pages.NhanVien
             buttons.Text = "Chon Sach";
             buttons.Name = "Thong Tin Chi Tiet";
             dataGridView1.Columns.Add(buttons);
+
+            for(int i =0; i< toanBoSach.Count; i++)
+            {
+                var listSachTheMuon = CongCu.myContext.TheMuons.Where(x => x.sMaSach == toanBoSach[i].sMaSach).ToList();
+                if (listSachTheMuon !=null && listSachTheMuon.Count > 0)
+                {
+                    if (DateTime.Compare(DateTime.Now, listSachTheMuon[0].dNgayTra) > 0)
+                    {
+                        dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                    }
+                }
+            }
         }
 
 
