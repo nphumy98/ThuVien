@@ -14,5 +14,19 @@ namespace ThuVien.Pages
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var dangNhap = new DangNhap();
+            Hide();
+            dangNhap.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var thongTinCaNhan = new ThongTinCaNhan();
+            Hide();
+            thongTinCaNhan.Show();
+        }
     }
 }

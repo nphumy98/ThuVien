@@ -43,16 +43,16 @@ namespace ThuVien
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using ThuVienDbContext myContext = new ThuVienDbContext();
-            CongCu.CurrentUser = ChonUser();
+            CongCu.LoaiUser = ChonUser();
             var dangNhapChinhXac = false;
-            if (CongCu.CurrentUser == UserType.DocGia)
+            if (CongCu.LoaiUser == UserType.DocGia)
             {
-                var docgias = myContext.DocGias.AsQueryable().ToList();
+                var docgias = CongCu.myContext.DocGias.AsQueryable().ToList();
                 var docGiaList = docgias.Where(x => x.sUser == UserTextBox.Text && x.sPassword == PasswordTextBox.Text).ToList();
                 dangNhapChinhXac = docGiaList.Any() == true ? true : false;
                 if(dangNhapChinhXac)
                 {
+                    CongCu.CurrentDocGia = docGiaList[0];
                     var sachDoc = new DocGiaMenu();
                     Hide();
                     sachDoc.Show();
@@ -64,11 +64,12 @@ namespace ThuVien
             }
             else
             {
-                var nhanviens = myContext.ThuThus.AsQueryable().ToList();
+                var nhanviens = CongCu.myContext.ThuThus.AsQueryable().ToList();
                 var nhanviensList = nhanviens.Where(x => x.sUser == UserTextBox.Text && x.sPassword == PasswordTextBox.Text).ToList();
                 dangNhapChinhXac = nhanviensList.Any() == true ? true : false;
                 if (dangNhapChinhXac)
                 {
+                    CongCu.CurrentNhanVien = nhanviensList[0];
                     var trangNhanVien = new NhanVienMenu();
                     Hide();
                     trangNhanVien.Show();
